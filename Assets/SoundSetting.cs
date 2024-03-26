@@ -13,7 +13,7 @@ public class SoundSetting : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        float vol = PlayerPrefs.GetFloat("SavedMasterVolume");
+        float vol = PlayerPrefs.GetFloat("SavedMusicVolume");
         SetVolume(vol);
     }
     public void SetVolume(float _value)
@@ -23,8 +23,8 @@ public class SoundSetting : MonoBehaviour
             _value = .001f;
         }
         RefreshSlider(_value);
-        PlayerPrefs.SetFloat("SavedMasterVolume", _value);
-        masterMixer.SetFloat("MasterVolume", Mathf.Log10(_value / 100) * 20f);
+        PlayerPrefs.SetFloat("SavedMusicVolume", _value);
+        masterMixer.SetFloat("MusicVolume", Mathf.Log10(_value / 100) * 20f);
     }
     public void SetVolumeFromSlider()
     {

@@ -13,7 +13,8 @@ public class AudioManagerScript : MonoBehaviour
     private void Start()
     {
         
-        audioSource.Play();
+        audioSources[0].Play();
+
     }
 
     
@@ -24,7 +25,7 @@ public class AudioManagerScript : MonoBehaviour
         {
             instance = this;
         }
-        else if (instance != this)
+        else 
         {
             Destroy(gameObject);
         }
@@ -34,6 +35,15 @@ public class AudioManagerScript : MonoBehaviour
     public void PlayMusic()
     {
         if (audioSource.isPlaying) return;
-        audioSource.Play();
+        audioSources[0].Play();
     }
+
+
+    public void PlaySFX()
+    {
+        audioSources[1].Play();
+        print("play clip");
+    }
+
+
 }

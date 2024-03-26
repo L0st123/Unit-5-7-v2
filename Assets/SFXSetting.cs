@@ -18,6 +18,7 @@ public class SFXSetting : MonoBehaviour
     }
     public void SetVolume(float _value)
     {
+        print("sfxvol = "+ _value);
         if(_value < 1)
         {
             _value = .001f;
